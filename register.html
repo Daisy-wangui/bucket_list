@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+      <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+     <div class="header">
+     	<h2>Register</h2>
+     </div>
+
+     <form method="POST" action="home.html" onsubmit="return validateForm()" name="vform">
+        
+     	  <div class="input-group">
+     	  	  <label>Username</label>
+     	  	  <input type="text" name="username">
+               
+     	  </div>
+
+     	  <div class="input-group">
+     	  	  <label>Email</label>
+     	  	  <input type="text" name="email">
+       
+     	  </div>
+
+     	  <div class="input-group">
+     	  	  <label>Password</label>
+     	  	  <input type="password" name="password_1">
+           </div>
+
+     	  <div class="input-group">
+     	  	  <label>Confirm Password</label>
+     	  	  <input type="password" name="password_2">
+                 
+     	  </div>
+
+          <!--birthday details start-->
+      <div>
+        <select name="registration_month" >
+          <option value="" selected >Month</option>
+          <option value="1">Jan</option>
+          <option value="2">Feb</option>
+          <option value="3">Mar</option>
+          <option value="4">Apr</option>
+          <option value="5">May</option>
+          <option value="5">June</option>
+          <option value="5">July</option>
+          <option value="5">Aug</option>
+          <option value="5">Sept</option>
+          <option value="5">Oct</option>
+          <option value="5">Nov</option>
+          <option value="5">Dec</option>
+        </select>
+        &nbsp;&nbsp;
+        <select name="birthday_day" >
+          <option value="" selected>Day</option>
+          <option value="1">Sun</option>
+          <option value="2">Mon</option>
+          <option value="3">Tue</option>
+          <option value="4">Wed</option>
+          <option value="5">Thurs</option>
+            <option value="5">Fri</option>
+              <option value="5">Sat</option>
+        </select>
+        &nbsp;&nbsp;
+        <select name="birthday_year">
+          <option value="" selected>Year</option>
+          <option value="2013">2013</option>
+          <option value="2012">2012</option>
+          <option value="2011">2011</option>
+          <option value="2010">2010</option>
+          <option value="2009">2009</option>
+        </select>
+      </div>
+      <!--birthday details ends-->
+      <div id="radio_button">
+        <input type="radio" name="radiobutton" value="Female">
+        <label >Female</label>
+        &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="radiobutton" value="Male">
+        <label >Male</label>
+      </div>
+       <br/>
+
+     <div class="input-group">
+              <button type="submit" value="Register" name="register" class="btn">Register</button>
+          </div>
+     </form>
+    </div>
+    <!--form ends-->
+
+  </div>
+</div>	
+     	
+     </form>
+     <script type="text/javascript">
+ if( username == "" )
+   {
+     document.form.Name.focus() ;
+  document.getElementById("errorBox").innerHTML = "enter the Username";
+     return false;
+   }
+ if( lname == "" )
+   {
+     document.form.LastName.focus() ;
+   document.getElementById("errorBox").innerHTML = "enter the last name";
+     return false;
+   }
+    
+   if (femail == "" )
+ {
+  document.form.Email.focus();
+  document.getElementById("errorBox").innerHTML = "enter the email";
+  return false;
+  }else if(!emailRegex.test(femail)){
+  document.form.Email.focus();
+  document.getElementById("errorBox").innerHTML = "enter the valid email";
+  return false;
+  }
+   
+   if (freemail == "" )
+ {
+  document.form.enterEmail.focus();
+  document.getElementById("errorBox").innerHTML = "Re-enter the email";
+  return false;
+  }else if(!emailRegex.test(freemail)){
+  document.form.enterEmail.focus();
+  document.getElementById("errorBox").innerHTML = "Re-enter the valid email";
+  return false;
+  }
+   
+  if(freemail !=  femail){
+   document.form.enterEmail.focus();
+   document.getElementById("errorBox").innerHTML = "emails are not matching, re-enter again";
+   return false;
+   }
+   
+   
+ if(fpassword == "")
+  {
+   document.form.Password.focus();
+   document.getElementById("errorBox").innerHTML = "enter the password";
+   return false;
+  }
+   
+   if (fmonth == "") {
+        document.form.registration_month.focus();
+  document.getElementById("errorBox").innerHTML = "select the birthday month";
+        return false;
+     }
+  if (fday == "") {
+        document.form.birthday_day.focus();
+  document.getElementById("errorBox").innerHTML = "select the birthday day";
+        return false;
+     }
+  if (fyear == "") {
+        document.form.birthday_year.focus();
+  document.getElementById("errorBox").innerHTML = "select the birthday year";
+        return false;
+     }
+  if(document.form.radiobutton[0].checked == false && document.form.radiobutton[1].checked == false){
+    document.getElementById("errorBox").innerHTML = "select your gender";
+    return false;
+   }
+  if(fname != '' && lname != '' && femail != '' && freemail != '' && fpassword != '' && fmonth != '' && fday != '' && fyear != ''){
+   document.getElementById("errorBox").innerHTML = "form submitted successfully";
+   }
+   window.location = "home.html";
+     
+}
+
+</script>
+
+     </body>
+     </html>
+     

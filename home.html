@@ -16,9 +16,37 @@
 			<h2 style="color: #fff; opacity: 1;">Hello New User</h2>
 		</div>
 
-	<div class="container">
-   <div></div>
-  </div>
+		<br/>
+		<br/>
+
+   <table class="table">
+   	    <thead>
+   	   	   <tr>
+   	   	   	 <th style="color: #fff;">Add List</th>
+   	   	   	 <th style="color: #fff;">Plan</th>
+   	   	   	 <th style="color: #fff;">Date</th>
+   	   	   	 <th style="color: #fff;">Action</th>
+   	   	   </tr>
+   	   </thead>
+
+   	  <tbody>
+       
+          	<tr>
+          	      <td>['id']</td>
+                  <td>['firstname']</td>
+                  <td>['lastname']</td>
+
+                  <td> <a href="index.php?deleteid='. $row['id'].'" onclick="return confirm(\'Delete?\')" class="btn btn-danger btn-xs" style="border: 1px solid black;" ">DELETE</a></td>
+                  <td> <a href="student_edit.php?editid='. $row['id'].'" class="btn btn-primary btn-xs" style="border: 1px solid black;" ">EDIT</a></td>
+
+                  
+            </tr>
+          	
+     
+       
+
+   </table>
+   </div>
 </div>
 
 
